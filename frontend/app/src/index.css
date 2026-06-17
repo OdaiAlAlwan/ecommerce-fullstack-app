@@ -1,111 +1,443 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-body {
-  margin: 0;
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+*{
   box-sizing: border-box;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
   margin: 0;
+  padding: 0;
+
+
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+body{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+
+:root{
+    --brand-color: #153448;
+    --brand-color-hover: #174361;
+ 
 }
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--brand-color);
+  cursor: all-scroll;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: var(--brand-color-hover);
+}
+
+
+
+/* delete modal */
+
+.ModalDelete {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  transition: all 0.5s;
+}
+
+
+
+
+
+
+
+
+
+/* Products in Shop Page */
+.Products{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 3px;
+ 
+}
+
+/* StatisticsProduct in main page */
+.StatisticsProduct{
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(450px , 1fr));
+  margin-left: 20px;
+  margin-right: 20px;
+  gap: 20px;    
+
+}
+
+
+
+/* Start Table  */
+.responsive-table {
+  overflow: auto;
+}
+.responsive-table table{
+  min-width: 400px;
+  border-spacing: 0;
+}
+
+.responsive-table thead td {
+  background-color: #ddd;
+  font-weight: bold;
+
+}
+.responsive-table table td{
+  padding: 15px;
+}
+
+.responsive-table tbody td {
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.responsive-table table tbody tr td:last-child{
+  border-right: 1px solid #eee;
+}
+
+.responsive-table tbody tr:hover td {
+    background-color: #eee;
+    cursor: pointer;
+}
+ 
+/* End Table   */
+
+/* Start Table Product */
+
+.responsive-table-Product{
+  overflow: auto;
+  text-align: center;
+
+}
+
+.responsive-table-Product table{
+  min-width: 400px;
+  border-spacing: 0;
+
+}
+
+.responsive-table-Product thead td {
+  background-color: #ddd;
+  font-weight: bold;
+
+
+}
+.responsive-table-Product table td{
+  padding: 10px;
+
+
+}
+
+.responsive-table-Product tbody td {
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.responsive-table-Product table tbody tr td:last-child{
+  border-right: 1px solid #eee;
+}
+
+.responsive-table-Product tbody tr:hover td {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+/* End Table Product */
+
+.responsive-table-orders  {
+  overflow: auto;
+}
+.responsive-table-orders  table{
+  min-width: 400px;
+  border-spacing: 0;
+}
+
+.responsive-table-orders  thead td {
+  background-color: #ddd;
+  font-weight: bold;
+
+}
+.responsive-table-orders  table td{
+  padding: 15px;
+}
+
+.responsive-table-orders  tbody td {
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.responsive-table-orders  table tbody tr td:last-child{
+  border-right: 1px solid #eee;
+}
+.responsive-table-orders  tbody tr:hover td {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+/* end table orders */
+
+/* start table invoice */
+
+.responsive-table-invoice{
+  overflow: hidden;
+}
+  
+.responsive-table-invoice table{
+  min-width: 400px;
+  border-spacing: 0;
+}
+
+.responsive-table-invoice  thead td {
+  background-color: #ddd;
+  font-weight: bold;
+
+}
+.responsive-table-invoice  table td{
+  padding: 15px;
+}
+
+.responsive-table-invoice  tbody td {
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.responsive-table-invoice  table tbody tr td:last-child{
+  border-right: 1px solid #eee;
+}
+.responsive-table-invoice  tbody tr:hover td {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+/* end table invoice */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 543px) {
+    .Products{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+    .cardProduct {
+        width: 170px; 
+        border: none;
+          
+    }
+    .hide-mobile {
+      display: none;
+      padding: 10px;
+    }
+    .box{
+      display: grid;
+      grid-template-columns: minmax(200px,1fr);
+      gap: 10px;
+    }
+    .StatisticsProduct{
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: minmax(200px ,1fr);
+      gap: 10px;
+  
+    }
+}
+
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (max-width: 768px) {
+
+    .Products{
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+        gap: 13px;
+    }
+    .hide-mobile {
+      display: none;
+      padding: 10px;
+    }
+    .StatisticsProduct{
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: minmax(200px ,1fr);
+      gap: 10px;
+  
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media  (min-width: 992px) {
+
+    .Products{
+        display: grid;
+        grid-template-columns: repeat(4 , 1fr);
+        gap: 2px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .Products{
+        display: grid;
+        grid-template-columns: repeat(4 , 1fr);
+        gap: 2px;
+    }
+}
+
+
+/* Sgin In & Sgin Up  Page */
+.landing{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+
+
+}
+.landing::after{
+    content: '';
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 107%;
+    background-color: #f7f7f7;
+    transform: skewY(105deg);
+    position: absolute;
+    z-index: -2;
+}
+
+
+
+
+
+
+
+
+
+/* Model Style  */
+.Overlay {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(219, 204, 204, 0.1);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+  transition: all 0.5s;
+  
+}
+
+
+
+.Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+  background-color: #eee;
+  border-radius: 9px;
+  box-shadow:  0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.5s;
+}
+
+
+/* shad */
+.sh-lg{
+  box-shadow: 5px 0px 2px #eee;
+}
+
+
+
+
+
+/* Lodaing Component */
+.loader {
+  position: relative;
+  width: 75px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#DDD 50px, transparent 0),
+                    linear-gradient(#DDD 50px, transparent 0),
+                    linear-gradient(#DDD 50px, transparent 0),
+                    linear-gradient(#DDD 50px, transparent 0),
+                    linear-gradient(#DDD 50px, transparent 0);
+  background-size: 8px 100%;
+  background-position: 0px 90px, 15px 78px, 30px 66px, 45px 58px, 60px 50px;
+  animation: pillerPushUp 4s linear infinite;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--brand-color);
+  border-radius: 50%;
+  animation: ballStepUp 4s linear infinite;
+}
+
+@keyframes pillerPushUp {
+0% , 40% , 100%{background-position: 0px 90px, 15px 78px, 30px 66px, 45px 58px, 60px 50px}
+50% ,  90% {background-position: 0px 50px, 15px 58px, 30px 66px, 45px 78px, 60px 90px}
+}
+
+@keyframes ballStepUp {
+0% {transform: translate(0, 0)}
+5% {transform: translate(8px, -14px)}
+10% {transform: translate(15px, -10px)}
+17% {transform: translate(23px, -24px)}
+20% {transform: translate(30px, -20px)}
+27% {transform: translate(38px, -34px)}
+30% {transform: translate(45px, -30px)}
+37% {transform: translate(53px, -44px)}
+40% {transform: translate(60px, -40px)}
+50% {transform: translate(60px, 0)}
+57% {transform: translate(53px, -14px)}
+60% {transform: translate(45px, -10px)}
+67% {transform: translate(37px, -24px)}
+70% {transform: translate(30px, -20px)}
+77% {transform: translate(22px, -34px)}
+80% {transform: translate(15px, -30px)}
+87% {transform: translate(7px, -44px)}
+90% {transform: translate(0, -40px)}
+100% {transform: translate(0, 0);}
+}
+
+
