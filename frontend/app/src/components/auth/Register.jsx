@@ -1,12 +1,9 @@
 import { Link } from 'react-router-dom'
-import shopImg from '../../assets/shopImage.png'
+
 
 export default function Register() {
   return (
     <div className=' overflow-hidden  h-[100vh] grid  grid-cols-[50%_50%] gap-10 justify-center items-center md:flex '>
-    <div className='h-[600px] w-[500px] flex justify-center items-center z-[-1] landing bg-[#f7f7f7] md:hidden '>
-     <img src={shopImg} alt='' className=' z-[-1]  '/> 
-   </div> 
    <div className='flex justify-center items-center m-4 p-4'>
      <div className='bg-[rgb(238,238,238)] md:text-sm w-[400px] h-[550px] md:w-[350px]  md:h-[450px] flex flex-col justify-center items-center gap-2 md:gap-[2px]  rounded-lg z-[1] shadow-xl' >
      <div className='flex flex-col gap-1 w-[250px]  ' >
