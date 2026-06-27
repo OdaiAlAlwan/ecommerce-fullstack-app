@@ -2,14 +2,13 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
-import { FaRegHeart } from "react-icons/fa";
-import { FaEye, FaStar } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { Add_ToCart, GETLogged_User_ProductCart } from "../../../rtk/slices/Cart-slice";
 
 export default function CardProduct({ data }) {
   const { isLogin } = useSelector((state) => state.auth);
-  const { _id, imageCover, price, ratingsQuantity, title } = data;
+  const { _id, imageCover, price, title } = data;
   const dispatch = useDispatch();
 
  
@@ -38,48 +37,39 @@ export default function CardProduct({ data }) {
   };
 
 
-
-    
-
-
-
-
   return (
     <div className="w-full h-[320px]">
-      <div className="border group transition-all duration-500 hover:shadow-md hover:-mt-3 border-[#eee] shadow-md rounded-lg h-[320px] w-[190px] cardProduct">
+      <div className="border group transition-all duration-500 hover:shadow-md hover:-mt-3 border-[#eee] shadow-md rounded-lg h-[290px] w-[190px]  cardProduct">
         <div className="relative overflow-hidden">
-       
+       <Link to={`/${_id}`}>
           <img
             src={imageCover}
             alt="Product"
-            className="w-full p-5 border-b-2 border-[#eee] rounded-md h-[200px]"
+            className="w-full p-5 border-b-2 border-[#eee] rounded-md h-[180px]"
           />
-          <ul className="flex transition-all duration-700 -bottom-10 justify-center items-center gap-2 absolute w-full group-hover:bottom-3">
-            <Link to={`/${_id}`}>
-              <li className="w-[38px] h-[38px] cursor-pointer bg-white flex justify-center items-center rounded-full hover:bg-[#eee] hover:rotate-[720deg] transition-all">
-                <FaEye />
-              </li>
-            </Link>
-            <li className="relative w-[38px] h-[38px] cursor-pointer bg-white flex justify-center items-center rounded-full hover:bg-[#eee] hover:rotate-[720deg] transition-all">
-              <RiShoppingCartLine onClick={(e) => AddedProduct(e, _id)} />
-              {productInCart && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                  {productInCart.quantity}
-                </span>
-              )}
-            </li>
-
-          </ul>
-          
+        </Link>
         </div>
-        <p className="px-2 mt-3 text-md font-light h-[45px] w-full overflow-clip">
+        <p className="px-2 mt-3 text-sm font-light h-[45px] w-full overflow-clip">
           {title}
         </p>
-        <div className="flex justify-center flex-row gap-10 mt-3 flex-nowrap">
+        <div className="flex justify-center items-center m-2 flex-row gap-8  font-bold flex-nowrap">
           <div>{price} $</div>
           <div className="flex items-center font-extralight text-sm gap-1">
-            {ratingsQuantity}
-            <FaStar className="text-[#b6eb43]" />
+            <ul className="flex justify-center items-center gap-2">
+              <Link to={`/${_id}`}>
+                <li className="w-[24px] h-[24px] cursor-pointer bg-white border border-[#eee] flex justify-center items-center rounded-full hover:bg-[#eee] hover:rotate-[720deg] transition-all">
+                  <FaEye />
+                </li>
+              </Link>
+              <li className="relative w-[24px] h-[24px] cursor-pointer bg-white border border-[#eee] flex justify-center items-center rounded-full hover:bg-[#eee] hover:rotate-[720deg] transition-all">
+                <RiShoppingCartLine onClick={(e) => AddedProduct(e, _id)} />
+                {productInCart && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {productInCart.quantity}
+                  </span>
+                )}
+              </li>
+            </ul>
           </div>
         </div>
       </div>

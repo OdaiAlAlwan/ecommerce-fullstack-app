@@ -5,6 +5,7 @@ import Register from "./components/auth/Register";
 import Cart from "./components/home/Cart";
 import ProductId from "./components/home/products/ProductId";
 import NotFindPage from "./utils/NotFindPage";
+import OrderConfirmation from "./page/OrderConfirmation";
 
 
 
@@ -22,6 +23,7 @@ function App() {
       <Route path="Cart" element={<Cart/>}/>
       <Route path="/:id" element={<ProductId/>}/>
       <Route path="/*" element={<NotFindPage/>}/>
+      <Route path="/order-confirmation" element={<OrderConfirmation/>}/>
 
       {/* User Dashboard */}
 

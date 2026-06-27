@@ -1,0 +1,176 @@
+[
+  {
+    "title": "Apple iPhone 15 Pro Max",
+    "slug": "apple-iphone-15-pro-max",
+    "quantity": 10,
+    "sold": 25,
+    "price": 109.95,
+    "priceAfterDiscount": 100,
+    "description": "Experience the ultimate smartphone with A17 Pro chip, titanium design, and a 48MP main camera. Capture the world in incredible detail and enjoy all-day battery life.",
+    "category": "61b2a9d869d54640ca3d7293",
+    "imageCover": "iphonecover.jpeg",
+    "ratingsAverage": 4.3,
+    "ratingsQuantity": 20,
+    "images": [
+      "iphone.jpeg",
+      "iphone1.jpeg",
+      "iphone2.jpeg",
+      "iphone3.jpeg"
+    ]
+  },
+  {
+    "title": "Samsung Galaxy S24 Ultra",
+    "slug": "samsung-galaxy-s24-ultra",
+    "quantity": 20,
+    "sold": 30,
+    "price": 22.3,
+    "priceAfterDiscount": 20,
+    "description": "Welcome to the era of mobile AI. With Galaxy S24 Ultra in your hands, you can unleash whole new levels of creativity, productivity and possibility.",
+    "category": "61b2a9d869d54640ca3d7293",
+    "imageCover": "iphone1.jpeg",
+    "ratingsAverage": 4.4,
+    "ratingsQuantity": 23,
+    "images": [
+      "iphone2.jpeg",
+      "iphone3.jpeg",
+      "iphone.jpeg"
+    ]
+  },
+  {
+    "title": "Sony WH-1000XM5 Headphones",
+    "slug": "sony-wh-1000xm5-headphones",
+    "quantity": 20,
+    "sold": 75,
+    "price": 55.99,
+    "description": "Industry-leading noise cancellation. Two processors control 8 microphones for unprecedented noise cancellation. With Auto NC Optimizer, noise canceling is automatically optimized.",
+    "category": "61b7a02868424f7846ce1d6f",
+    "imageCover": "ipadcover.jpeg",
+    "ratingsAverage": 4,
+    "ratingsQuantity": 70,
+    "images": [
+      "ipad.jpeg",
+      "ipad1.jpeg",
+      "ipad2.jpeg",
+      "ipad3.jpeg"
+    ]
+  },
+  {
+    "title": "MacBook Pro 16-inch M3 Max",
+    "slug": "macbook-pro-16-inch-m3-max",
+    "quantity": 100,
+    "sold": 101,
+    "price": 15.99,
+    "description": "Mind-blowing. Head-turning. The most advanced Mac ever built with the M3 Max chip. Enjoy a stunning Liquid Retina XDR display and amazing battery life.",
+    "category": "61b2a9d869d54640ca3d7293",
+    "imageCover": "maccover.jpeg",
+    "ratingsAverage": 4.9,
+    "ratingsQuantity": 98,
+    "images": [
+      "mac1.jpeg",
+      "mac2.jpeg",
+      "mac3.jpeg"
+    ]
+  },
+  {
+    "title": "Dell XPS 15 OLED Laptop",
+    "slug": "dell-xps-15-oled-laptop",
+    "quantity": 100,
+    "sold": 14,
+    "price": 695,
+    "description": "15.6-inch 3.5K OLED touch display, Intel Core i9 processor, NVIDIA RTX 4070 graphics. Built for creators who need desktop-level performance in a laptop.",
+    "category": "61b2a9d869d54640ca3d7293",
+    "imageCover": "tabcover.jpeg",
+    "ratingsAverage": 4.4,
+    "ratingsQuantity": 12,
+    "images": [
+      "tab.jpeg",
+      "tab1.jpeg",
+      "tab2.jpeg"
+    ]
+  },
+  {
+    "title": "Apple Watch Ultra 2",
+    "slug": "apple-watch-ultra-2",
+    "quantity": 75,
+    "sold": 69,
+    "price": 168,
+    "description": "The most rugged and capable Apple Watch pushes the limits again. Featuring the all-new S9 SiP. A magical new way to use your watch without touching the screen.",
+    "category": "61b2a8dd4bad61f4cc4a98ea",
+    "imageCover": "ipadcover.jpeg",
+    "ratingsAverage": 3.1,
+    "ratingsQuantity": 66,
+    "images": [
+      "tab3.jpeg",
+      "tab4.jpeg",
+      "ipad1.jpeg"
+    ]
+  },
+  {
+    "title": "PlayStation 5 Console",
+    "slug": "playstation-5-console",
+    "quantity": 33,
+    "sold": 99,
+    "price": 9.99,
+    "description": "Experience lightning-fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio.",
+    "category": "61b2a8dd4bad61f4cc4a98ea",
+    "imageCover": "iphonecover.jpeg",
+    "ratingsAverage": 2.8,
+    "ratingsQuantity": 76,
+    "images": [
+      "ipad2.jpeg",
+      "iphone.jpeg",
+      "iphone1.jpeg"
+    ]
+  },
+  {
+    "title": "Nike Air Force 1 '07",
+    "slug": "nike-air-force-1-07",
+    "quantity": 90,
+    "sold": 32,
+    "price": 10.99,
+    "description": "The radiance lives on in the Nike Air Force 1 '07, the b-ball icon that puts a fresh spin on what you know best: crisp leather, bold colors and the perfect amount of flash.",
+    "category": "61b2a8dd4bad61f4cc4a98ea",
+    "imageCover": "iphonewhitecover.jpeg",
+    "ratingsAverage": 4.3,
+    "ratingsQuantity": 20,
+    "images": [
+      "iphone2.jpeg",
+      "iphone3.jpeg",
+      "iphonewhite.jpeg"
+    ]
+  },
+  {
+    "title": "LG C3 65-inch OLED TV",
+    "slug": "lg-c3-65-inch-oled-tv",
+    "quantity": 102,
+    "sold": 51,
+    "price": 64,
+    "description": "The LG OLED evo C-Series is powered by the a9 AI Processor Gen6—made exclusively for LG OLED. It delivers beautiful picture and performance.",
+    "category": "61b2a8dd4bad61f4cc4a98ea",
+    "imageCover": "maccover.jpeg",
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 42,
+    "images": [
+      "iphonewhite1.jpeg",
+      "iphonewhite2.jpeg",
+      "mac1.jpeg"
+    ]
+  },
+  {
+    "title": "DJI Mini 4 Pro Drone",
+    "slug": "dji-mini-4-pro-drone",
+    "quantity": 104,
+    "sold": 9,
+    "price": 109,
+    "description": "Mini 4 Pro is our most advanced mini-camera drone to date. It integrates powerful imaging capabilities, omnidirectional obstacle sensing, and ActiveTrack 360°.",
+    "category": "61b2a8dd4bad61f4cc4a98ea",
+    "imageCover": "tabcover.jpeg",
+    "ratingsAverage": 1.6,
+    "ratingsQuantity": 5,
+    "images": [
+      "mac2.jpeg",
+      "mac3.jpeg",
+      "tab.jpeg"
+    ]
+  }
+]

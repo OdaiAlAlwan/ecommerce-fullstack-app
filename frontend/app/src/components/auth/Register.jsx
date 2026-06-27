@@ -1,42 +1,73 @@
-import { Link } from 'react-router-dom'
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { IoBagHandleSharp } from "react-icons/io5";
 
 export default function Register() {
   return (
-    <div className=' overflow-hidden  h-[100vh] grid  grid-cols-[50%_50%] gap-10 justify-center items-center md:flex '>
-   <div className='flex justify-center items-center m-4 p-4'>
-     <div className='bg-[rgb(238,238,238)] md:text-sm w-[400px] h-[550px] md:w-[350px]  md:h-[450px] flex flex-col justify-center items-center gap-2 md:gap-[2px]  rounded-lg z-[1] shadow-xl' >
-     <div className='flex flex-col gap-1 w-[250px]  ' >
-         <label>Name</label>
-         <input  id='name' type='name' placeholder='Full Name' className=' border-black rounded-md  outline-none p-2'  />
-         </div>
-         <div className='flex flex-col gap-1 w-[250px]' >
-         <label>Email</label>
-         <input  id='email' type='email' placeholder='email@example.com' className=' border-black rounded-md  outline-none p-2'  />
-         </div>
-         <div className='flex flex-col gap-1 w-[250px]'>
-         <label>Password</label>
-         <input  id='password' type='password' placeholder='Password . . .' className=' border-black rounded-md  outline-none p-2'  />
-         </div>
-         <div className='flex flex-col gap-1 w-[250px]'>
-         <label>Confirm Password</label>
-         <input  id='password' type='password' placeholder='Confirm Password . . .' className=' border-black rounded-md  outline-none p-2'  />
-         </div>
-         <button  disabled className='bg-sky-500 hover:bg-sky-700 w-[100px] disabled:cursor-not-allowed rounded-md p-2 text-white text-l mt-10 md:mt-4'>Sign Up</button>
-         <div>
-         <span>You Have Account 
-           <Link to={'/SignIn'}>
-           <button  className='p-2 text-sky-700  text-l mt-10 md:mt-4'>Sign In</button>
-           </Link>
-         </span>
-         </div>
-       
+    <div className="flex min-h-screen items-center justify-center p-4">
+      <div className="w-full flex items-center justify-center">
+        <form
+          className="z-[1] flex h-auto py-8 w-[320px] text-sm flex-col items-center justify-center gap-3 rounded-lg bg-[rgb(238,238,238)] shadow-xl md:w-[320px]"
+        >
+          <h1 className="mb-2 flex items-center justify-center gap-2 font-serif text-lg font-extrabold">
+            Welcome to ELECTRO <IoBagHandleSharp className="text-[#319cd2]" />
+          </h1>
+          
+          <div className="flex w-[240px] flex-col gap-1">
+            <label className="text-xs">Name</label>
+            <input
+              id="name"
+              type="text"
+              placeholder="Full Name"
+              className="rounded-md border-black p-1.5 outline-none text-xs"
+            />
+          </div>
+          <div className="flex w-[240px] flex-col gap-1">
+            <label className="text-xs">Email</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="email@example.com"
+              className="rounded-md border-black p-1.5 outline-none text-xs"
+            />
+          </div>
+          <div className="flex w-[240px] flex-col gap-1">
+            <label className="text-xs">Password</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Password . . ."
+              className="rounded-md border-black p-1.5 outline-none text-xs"
+            />
+          </div>
+          <div className="flex w-[240px] flex-col gap-1">
+            <label className="text-xs">Confirm Password</label>
+            <input
+              id="confirmPassword"
+              type="password"
+              placeholder="Confirm Password . . ."
+              className="rounded-md border-black p-1.5 outline-none text-xs"
+            />
+          </div>
 
-       </div>
-
-   </div>
-      
-
-   </div>
-  )
+          <button
+            disabled
+            className="text-sm mt-4 w-[100px] disabled:cursor-not-allowed rounded-md bg-sky-500 p-1.5 text-white hover:bg-sky-700"
+          >
+            Sign Up
+          </button>
+          <div className="text-xs mt-2">
+            <span>
+              You Have Account? 
+              <Link to={'/SignIn'}>
+                <button className="text-xs p-1 text-sky-700 ml-1">
+                  Sign In
+                </button>
+              </Link>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }

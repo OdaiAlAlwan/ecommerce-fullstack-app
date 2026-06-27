@@ -8,8 +8,8 @@ export default function Home() {
     <>
       {/* <SearchBar/> */}
       <Slider/>
-      <ContinerProduct title={'Last Products '} btn={'View All'} />
-      <ContinerProduct   title={'Top Product '} btn={'View All'}  />
+      <ContinerProduct title={'Last Products'} />
+      <ContinerProduct title={'Top Product'} />
     </>
   );
 }

@@ -46,20 +46,19 @@ export default function Login() {
   return (
 
 
-    <div className=" grid  h-[100vh] grid-cols-[50%_50%]  items-center justify-center gap-10 overflow-hidden md:flex ">
-      <div className="m-4 flex flex-col items-center justify-center p-4">
-      <div className="text-center text-sm bg-slate-500 mb-2 p-2 flex flex-col gap-1 rounded-md" ><span>Log in as a user</span> <span> user@outlook.com </span>   <span> password : 123456 </span>  </div>
+    <div className="flex min-h-screen items-center justify-center p-4">
+      <div className="w-full flex items-center justify-center">
 
         <form
           onSubmit={submit}
-          className="z-[1] flex h-[400px] w-[400px] flex-col  items-center justify-center gap-2 rounded-lg bg-[rgb(238,238,238)] shadow-xl md:h-[350px] md:w-[350px] md:text-sm"
+          className="z-[1] flex h-auto py-8 w-[320px] text-sm flex-col items-center justify-center gap-3 rounded-lg bg-[rgb(238,238,238)] shadow-xl md:w-[320px]"
         >
-          <h1 className=" flex items-center justify-center gap-2 font-serif font-extrabold">
-            Welcome to E-commerce{" "}
+          <h1 className="mb-2 flex items-center justify-center gap-2 font-serif text-lg font-extrabold">
+            Welcome to ELECTRO{" "}
             <IoBagHandleSharp className="text-[#319cd2]" />{" "}
           </h1>
-          <div className="flex w-[250px] flex-col gap-1">
-            <label>Email</label>
+          <div className="flex w-[240px] flex-col gap-1">
+            <label className="text-xs">Email</label>
             <input
               onChange={inputHandel}
               value={state.email}
@@ -67,11 +66,11 @@ export default function Login() {
               id="email"
               type="email"
               placeholder="email@example.com"
-              className=" rounded-md border-black  p-2 outline-none"
+              className="rounded-md border-black p-1.5 outline-none text-xs"
             />
           </div>
-          <div className="flex w-[250px] flex-col gap-1">
-            <label>Password</label>
+          <div className="flex w-[240px] flex-col gap-1">
+            <label className="text-xs">Password</label>
             <input
               onChange={inputHandel}
               value={state.password}
@@ -79,21 +78,21 @@ export default function Login() {
               id="password"
               type="password"
               placeholder="Password. . . ."
-              className=" rounded-md border-black  p-2 outline-none"
+              className="rounded-md border-black p-1.5 outline-none text-xs"
             />
           </div>
           <button
             disabled={loader ? true : false}
-            className="text-l mt-10 w-[100px] rounded-md bg-sky-500 p-2 text-white hover:bg-sky-700 md:mt-4"
+            className="text-sm mt-4 w-[100px] rounded-md bg-sky-500 p-1.5 text-white hover:bg-sky-700"
           >
             {loader ? <BarLoader cssOverride={OverrideStyle} /> : "Sign In"}
           </button>
 
-          <div>
+          <div className="text-xs mt-2">
             <span>
               Create Account
               <Link to={"/SignUp"}>
-                <button className="text-l mt-10 p-2 text-sky-700 md:mt-4 ">
+                <button className="text-xs p-1 text-sky-700 ml-1">
                   Sign Up
                 </button>
               </Link>

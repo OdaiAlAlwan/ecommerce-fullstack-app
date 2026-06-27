@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Banner() {
   return (
-    <div className='container w-full m-1 md-lg:mt-1 mb-4'>
-        <div className='w-[85%] lg:w-[90%] mx-auto sm:w-[100%] cursor-pointer'>
+    <div className='container w-full py-2 px-20 md-lg:mt-1 mb-4'>
+        <div className='w-full lg:w-[90%] mx-auto sm:w-[100%] cursor-pointer'>
             <div className='relative w-full h-[350px] md:h-[450px] bg-[#121620] rounded-xl overflow-hidden flex flex-col justify-center'>
                 <div className='absolute right-0 top-0 bottom-0 w-2/3 bg-gradient-to-l from-[#1e3a4a] to-transparent opacity-50 z-0'></div>
                 
@@ -30,7 +30,7 @@ export default function Banner() {
                     </div>
                 </div>
 
-                <div className='hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[50%] h-[90%] bg-contain bg-right bg-no-repeat z-0 opacity-70' style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=800&q=80")' }}>
+                <div className='absolute right-0 top-1/2 -translate-y-1/2 w-[50%] h-[100%] bg-contain bg-right bg-no-repeat z-0 opacity-70' style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=800&q=80")' }}>
                 </div>
             </div>
         </div>

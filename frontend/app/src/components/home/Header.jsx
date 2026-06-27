@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { LOG_OUT } from "../../rtk/slices/AuthUser-slice";
 import { BsList } from "react-icons/bs";
-import { FaHeart } from "react-icons/fa";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import { GiShoppingCart } from "react-icons/gi";
 import { CiShop } from "react-icons/ci";
@@ -83,10 +82,10 @@ export default function Header() {
   
 
   return (
-    <header ref={sidebarRef}  className="bg-[#153448] shadow-md">
+    <header ref={sidebarRef}  className="bg-[#121620] shadow-md">
       <div className="container mx-auto sm:w-[100%]">
         <div className="flex h-[60px] items-center justify-between text-white sm:w-full lg:h-[50px]">
-          <Link to={"/"}>E-commerce</Link>
+          <Link to={"/"}>ELECTRO</Link>
             
           {/* for small scren */}
           <div className="relative hidden h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-sm md:flex">
@@ -101,12 +100,6 @@ export default function Header() {
               >
                 <ul className="flex flex-col items-center justify-between p-10">
                 {isLogin ? <> 
-                  
-                  <Link to="/Dashbord/user/Profile">
-                    <li className="mb-4 flex flex-col items-center justify-between text-white" onClick={toggleSidebar} >
-                      Profile
-                    </li>
-                  </Link>
                   <li className="mb-4 flex flex-col items-center justify-between text-white cursor-pointer"
                    onClick={() => {
                       HandelLogout();
@@ -145,9 +138,11 @@ export default function Header() {
               <Link to={"Cart"}>
                 <li className="relative ml-2 mr-10 flex items-center text-[1.5rem] text-white">
                   <GiShoppingCart />
-                  <span className="absolute -right-[9px] -top-[9px] flex h-[5px] w-[5px] items-center justify-center rounded-full bg-[#eee] p-2 text-[0.5rem] font-light text-[#4D869C]">
-                    {isLogin ? numOfCartItems : 0}
-                  </span>
+                  {isLogin && (
+                    <span className="absolute -right-[9px] -top-[9px] flex h-[5px] w-[5px] items-center justify-center rounded-full bg-[#eee] p-2 text-[0.5rem] font-light text-[#4D869C]">
+                      {numOfCartItems}
+                    </span>
+                  )}
                 </li>
               </Link>
             </ul>
@@ -167,9 +162,6 @@ export default function Header() {
                   </button>
                   {isOpen && (
                     <div className="absolute rounded-md bg-[#eee] p-2 text-black m-2 transition-all  duration-500  z-[999]  w-[full] border-x ">
-                      <span  onClick={toggleOpen}>
-                        <Link to="/Dashbord/user/Profile">Profile</Link>
-                      </span>
                       <span className="cursor-pointer" onClick={HandelLogout}  >
                         Logout 
                       </span>
@@ -188,10 +180,11 @@ export default function Header() {
               <Link to={"Cart"}>
                 <li className="relative mx-2 text-[1.5rem]">
                   <GiShoppingCart />
-                  <span className="absolute -right-[9px] -top-[9px] flex h-[5px] w-[5px] items-center justify-center rounded-full bg-[#eee] p-2 text-[0.5rem] font-light text-[#4D869C]">
-                  {isLogin ? numOfCartItems : 0}
-                  
-                  </span>
+                  {isLogin && (
+                    <span className="absolute -right-[9px] -top-[9px] flex h-[5px] w-[5px] items-center justify-center rounded-full bg-[#eee] p-2 text-[0.5rem] font-light text-[#4D869C]">
+                      {numOfCartItems}
+                    </span>
+                  )}
                 </li>
               </Link>
 
