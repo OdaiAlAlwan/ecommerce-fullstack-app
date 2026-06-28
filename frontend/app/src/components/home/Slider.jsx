@@ -1,6 +1,20 @@
-import React from 'react'
+/**
+ * Slider.jsx — Promotional Banner Component
+ *
+ * Displays a hero banner on the homepage that highlights a featured product.
+ * When the user clicks "Shop Now", they are navigated to the product detail page.
+ * The featured product is fetched dynamically from the Redux store.
+ */
+
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function Banner() {
+  const { data: products } = useSelector((state) => state.products);
+
+  // Find the featured product (MacBook Pro) from the loaded products list
+  const featured = products.find((p) => p.title?.includes("MacBook Pro"));
+
   return (
     <div className='container w-full py-2 px-20 md-lg:mt-1 mb-4'>
         <div className='w-full lg:w-[90%] mx-auto sm:w-[100%] cursor-pointer'>
@@ -21,16 +35,28 @@ export default function Banner() {
                     </p>
                     
                     <div className='flex gap-3'>
-                        <button className='bg-[#a9f0ff] hover:bg-[#8ee5f8] text-gray-900 text-sm md:text-base font-semibold px-5 py-2.5 rounded-md transition-colors'>
-                            Shop Now
-                        </button>
-                        <button className='bg-[#374151] hover:bg-[#4b5563] text-white border border-gray-600 text-sm md:text-base font-semibold px-5 py-2.5 rounded-md transition-colors'>
-                            Watch Teaser
-                        </button>
+                        {featured ? (
+                          <Link to={`/${featured._id}`}>
+                            <button className='bg-[#a9f0ff] hover:bg-[#8ee5f8] text-gray-900 text-sm md:text-base font-semibold px-5 py-2.5 rounded-md transition-colors'>
+                                Shop Now
+                            </button>
+                          </Link>
+                        ) : (
+                          <button className='bg-[#a9f0ff] hover:bg-[#8ee5f8] text-gray-900 text-sm md:text-base font-semibold px-5 py-2.5 rounded-md transition-colors'>
+                              Shop Now
+                          </button>
+                        )}
                     </div>
                 </div>
 
-                <div className='absolute right-0 top-1/2 -translate-y-1/2 w-[50%] h-[100%] bg-contain bg-right bg-no-repeat z-0 opacity-70' style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=800&q=80")' }}>
+                {/* Background product image — uses the featured product's cover image if available */}
+                <div 
+                  className='absolute right-0 top-1/2 -translate-y-1/2 w-[50%] h-[100%] bg-contain bg-right bg-no-repeat z-0 opacity-70' 
+                  style={{ 
+                    backgroundImage: featured?.imageCover 
+                      ? `url("${featured.imageCover}")` 
+                      : 'url("https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=800&q=80")' 
+                  }}>
                 </div>
             </div>
         </div>

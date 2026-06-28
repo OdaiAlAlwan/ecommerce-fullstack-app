@@ -37,6 +37,10 @@ const productSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Product Image cover is required'],
     },
+    brand: {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Brand',
+    },
     images: [String],
     category: {
       type: mongoose.Schema.ObjectId,

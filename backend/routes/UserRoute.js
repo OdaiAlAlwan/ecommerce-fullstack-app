@@ -40,7 +40,7 @@ router
   .route("/")
   .get(
     authController.protect,
-    authController.allowedTo("manager", "admin"),
+    authController.allowedTo("admin"),
     getUser
   )
   .post(

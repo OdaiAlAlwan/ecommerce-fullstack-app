@@ -30,8 +30,10 @@ root.render(
 
         <BrowserRouter>
        
+        <div className="flex flex-col min-h-screen">
         <Header/>
 
+        <main className="flex-grow">
         <Suspense fallback={<Lodaing/>} >
         <App />
 
@@ -49,11 +51,12 @@ root.render(
           },
           }}/>
         </Suspense>
-       
+        </main>
 
 
 
         <Footer/>
+        </div>
 
 
 

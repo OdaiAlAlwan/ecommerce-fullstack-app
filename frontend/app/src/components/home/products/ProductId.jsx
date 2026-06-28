@@ -1,6 +1,3 @@
-
-
-import Carousel from "react-multi-carousel";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaCartArrowDown } from "react-icons/fa";
@@ -9,6 +6,17 @@ import toast from "react-hot-toast";
 import Lodaing from "../../../ui/Lodaing";
 import { Get_Product_By_Id } from "../../../rtk/slices/Product-slice";
 import { Add_ToCart, GETLogged_User_ProductCart } from "../../../rtk/slices/Cart-slice";
+
+/**
+ * ProductId.jsx — Product Details Page Component
+ *
+ * Fetches and displays detailed information for a specific product based on the URL parameter (ID).
+ * Features include:
+ *  - Clickable thumbnail images displayed in a row to browse product photos
+ *  - Fetching the product data from the backend
+ *  - Adding the product to the user's cart (with authentication check)
+ *  - Displaying the current cart quantity for the selected product as a badge
+ */
 
 export default function ProductId() {
   const { id } = useParams();
@@ -23,20 +31,7 @@ export default function ProductId() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  // Fetch the specific product's data based on the ID from the URL
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -53,13 +48,13 @@ export default function ProductId() {
 
   useEffect(() => {
     if (data.length > 0) {
-      // تعيين صورة الغلاف الابتدائية
       setImage(data[0].imageCover);
     }
   }, [data]);
 
 
 
+  // Handles adding the product to the cart, ensuring the user is logged in
   const addProduct = async (e, prodId) => {
     if(isLogin){
     e.preventDefault();
@@ -81,28 +76,7 @@ export default function ProductId() {
 
 
 
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 4,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 4,
-    },
-    mobile: {
-      breakpoint: { max: 564, min: 0 },
-      items: 4,
-    },
-    xsmobile: {
-      breakpoint: { max: 376, min: 0 },
-      items: 3,
-    },
-  };
+
 
 
 
@@ -136,30 +110,30 @@ export default function ProductId() {
                   className="h-[400px] md:h-[250px] p-2"
                 />
               </div>
-              <div className="w-[400px] md:h-full">
-                {el.images && (
-                  <Carousel
-                    autoPlay={true}
-                    infinite={true}
-                    arrows={true}
-                    draggable={true}
-                    responsive={responsive}
-                    transitionDuration={1000}
-                    removeArrowOnDeviceType={["mobile", "xsmobile"]}
+              {/* Thumbnail images row — click to select, includes the cover image */}
+              <div className="flex gap-2 mt-3 flex-wrap">
+                {/* Cover image thumbnail */}
+                <div
+                  onClick={() => setImage(el.imageCover)}
+                  className={`cursor-pointer border-2 rounded p-1 ${
+                    image === el.imageCover || !image ? "border-blue-500" : "border-gray-200"
+                  }`}
+                >
+                  <img src={el.imageCover} alt="cover" className="w-[70px] h-[70px] object-contain" />
+                </div>
+
+                {/* Additional product images */}
+                {el.images && el.images.map((ele, i) => (
+                  <div
+                    key={i}
+                    onClick={() => setImage(ele)}
+                    className={`cursor-pointer border-2 rounded p-1 ${
+                      image === ele ? "border-blue-500" : "border-gray-200"
+                    }`}
                   >
-                    {el.images.map((ele, i) => {
-                      return (
-                        <div
-                          key={i}
-                          onClick={() => setImage(ele)}
-                          className="cursor-pointer"
-                        >
-                          <img src={ele} alt={`slide-${i}`} className="border m-2" />
-                        </div>
-                      );
-                    })}
-                  </Carousel>
-                )}
+                    <img src={ele} alt={`product-${i}`} className="w-[70px] h-[70px] object-contain" />
+                  </div>
+                ))}
               </div>
             </div>
           

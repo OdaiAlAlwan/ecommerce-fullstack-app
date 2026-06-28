@@ -25,7 +25,7 @@ router.route("/:cartId").post(createCashOrder);
 
 router.get(
   "/",
-  authController.allowedTo("user", "manager", "admin"),
+  authController.allowedTo("user", "admin"),
   filterOrderForLoggedUser,
   findAllOrders
 );

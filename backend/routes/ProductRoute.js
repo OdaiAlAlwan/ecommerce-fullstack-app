@@ -26,7 +26,7 @@ router
   .get(getProducts)
   .post(
     authController.protect,
-    authController.allowedTo("manager", "admin"),
+    authController.allowedTo("admin"),
     uploadProductImage,
     resizeProductImages,
     createProductValidator,
@@ -38,7 +38,7 @@ router
   .get(getProductValidator, getProductByid)
   .put(
     authController.protect,
-    authController.allowedTo("manager", "admin"),
+    authController.allowedTo("admin"),
     uploadProductImage,
     resizeProductImages,
     updateProductValidator,

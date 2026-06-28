@@ -1,6 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const ApiError = require("../utils/ApiError");
-const ApiFeatures = require("../utils/ApiFeatures");
+
 
 
 exports.deleteOne = (model) =>
@@ -59,28 +59,16 @@ exports.getOneById = (model , pupulateOptian) =>
     res.status(200).json({ data: document });
   });
 
-exports.getAll = (model , modelName = '') =>
+exports.getAll = (model) =>
   asyncHandler(async (req, res) => {
     let filter = {};
     if (req.filterObj) {
       filter = req.filterObj;
     }
 
-    // Build Query
-    const documentscount = await model.countDocuments();
-    const apiFeatures = new ApiFeatures(model.find(filter), req.query)
-      .Pagination(documentscount)
-      .filter()
-      .sort()
-      .search(modelName)
-      .limitFields();
-    // .populate({ path: "category", select: "name -_id" });
+    const documents = await model.find(filter);
 
-    const { mongooseQuery, paginationResult } = apiFeatures;
-    // execute Query
-    const product = await mongooseQuery;
-    
     res
       .status(200)
-      .json({ results: product.length, paginationResult, data: product });
+      .json({ results: documents.length, data: documents });
   });

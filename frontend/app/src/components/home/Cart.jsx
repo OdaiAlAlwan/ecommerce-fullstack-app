@@ -1,3 +1,15 @@
+/**
+ * Cart.jsx — Shopping Cart Page Component
+ *
+ * Displays all cart items for the logged-in user fetched from the backend.
+ * Allows the user to:
+ *  - Update item quantities (+/-)
+ *  - Remove individual items or clear the entire cart
+ *  - View the order summary (subtotal, shipping, total)
+ *  - Proceed to simulated checkout and navigate to the confirmation page
+ *
+ * Cart state is managed server-side via Redux (Cart-slice) and the backend API.
+ */
 
 import { useEffect } from "react";
 import { FiPlusCircle } from "react-icons/fi";
@@ -30,6 +42,7 @@ export default function Cart() {
     }
   }, [dispatch, isLogin]);
 
+  // Clears all items from the user's cart by dispatching the Delete_Cart action
   const CleanCart = async () => {
     try {
       await dispatch(Delete_Cart()).unwrap();
@@ -40,6 +53,7 @@ export default function Cart() {
     }
   };
 
+  // Removes a specific cart item by its ID, then refreshes the cart data
   const deleteItemById = async (id) => {
     try {
       await dispatch(Delete_ItemAtCart(id)).unwrap();
@@ -50,6 +64,7 @@ export default function Cart() {
     }
   };
 
+  // Updates the quantity of a specific cart item and refreshes cart data
   const updateQuantity = async (id, newQuantity) => {
     try {
       await dispatch(

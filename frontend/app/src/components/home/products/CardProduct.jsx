@@ -5,6 +5,15 @@ import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { Add_ToCart, GETLogged_User_ProductCart } from "../../../rtk/slices/Cart-slice";
+/**
+ * CardProduct.jsx — Individual Product Card Component
+ *
+ * Displays a summary of a product within a listing (image, title, price).
+ * Includes quick actions to:
+ *  - Navigate to the detailed product page
+ *  - Add the product directly to the shopping cart (with authentication check)
+ *  - Display the current quantity of the product already in the cart as a badge
+ */
 
 export default function CardProduct({ data }) {
   const { isLogin } = useSelector((state) => state.auth);
@@ -19,6 +28,7 @@ export default function CardProduct({ data }) {
 
 
 
+  // Handles adding the product to the user's cart
   const AddedProduct = async (e, id) => {
     if(isLogin){
       e.preventDefault();

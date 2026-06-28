@@ -11,6 +11,15 @@ import toast from "react-hot-toast";
 import { GETLogged_User_ProductCart } from "../../rtk/slices/Cart-slice";
 
 
+/**
+ * Header.jsx — Main Navigation Header Component
+ *
+ * Provides global navigation for the application, including:
+ *  - Links to Home, Shop, and Cart
+ *  - Authentication state handling (Login/Logout buttons)
+ *  - A dynamic cart badge showing the total number of items
+ *  - A responsive sidebar for mobile devices
+ */
 
 export default function Header() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -27,6 +36,7 @@ export default function Header() {
 
  
 
+  // Toggles the mobile sidebar navigation
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
@@ -66,6 +76,7 @@ export default function Header() {
     };
   }, []);
 
+  // Handles user logout by dispatching the LOG_OUT action and redirecting to the SignIn page
   const HandelLogout = async () => {
     try {
       await dispatch(LOG_OUT()).unwrap();

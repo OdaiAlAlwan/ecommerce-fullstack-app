@@ -4,7 +4,7 @@ const asyncHandler = require("express-async-handler");
 const jwt = require("jsonwebtoken");
 const ApiError = require("../utils/ApiError");
 const UserModel = require("../models/UserModel");
-const sendEmail = require("../utils/sendEmail");
+
 
 
 const createToken = (payload) =>
@@ -202,21 +202,8 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
     \n ${resetCode} \n Enter this code to complete the reset. \n Thanks for helping us keep your account secure.
     \n The E-commerce Team`;
 
-  try {
-    await sendEmail({
-      email: user.email,
-      subject: "Your password reset code (valid for 10 min)",
-      message,
-    });
-  } catch (err) {
-    user.passwordResetCode = undefined;
-    user.passwordResetExpires = undefined;
-    user.passwordResetVerified = undefined;
-
-    await user.save();
-
-    return next(new ApiError("There is an error in sending email", 500));
-  }
+  // Note: Email sending is not implemented in this MVP version
+  console.log(`Password reset code for ${user.email}: ${resetCode}`);
 
   res
     .status(200)

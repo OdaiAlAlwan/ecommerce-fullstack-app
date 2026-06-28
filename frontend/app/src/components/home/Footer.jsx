@@ -1,14 +1,14 @@
 import { MdOutlineCopyright } from "react-icons/md";
 export default function Footer() {
-    const date = new Date()
+  const date = new Date();
   return (
-    <footer className='bg-[#121620] mt-10  h-[60px] md-lg:h-[50px]'>
-        <div className='container mx-auto] sm:w-[100%]'>
-            <div className='flex justify-center items-center py-3 text-white'>
-                <MdOutlineCopyright className='mx-1 text-white'/> {date.getFullYear()} by ODAI
-            </div>
+    <footer className="md-lg:h-[50px] h-[60px] bg-[#121620]">
+      <div className="mx-auto] container sm:w-[100%]">
+        <div className="flex items-center justify-center py-3 text-white">
+          <MdOutlineCopyright className="mx-1 text-white" />{" "}
+          {date.getFullYear()} by ODAI
         </div>
-
+      </div>
     </footer>
-  )
+  );
 }
